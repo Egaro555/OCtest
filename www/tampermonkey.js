@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name         QuizzMoodle
 // @description  private 
+// @license      EGR
 // @version      1.0
 // @description  try to take over the world!
 // @author       You
