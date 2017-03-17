@@ -1,13 +1,16 @@
 // ==UserScript==
-// @name         QuizzMoodle
-// @description  private
-// @version      1.0
-// @author       Eg555
+// @name QuizzMoodle
+// @description private
+// @version 1.0
+// @author Eg555
 // @include *
-// @match        http://moodle2.insa-lyon.fr/mod/quiz/*
-// @match        http://moodle2.insa-lyon.fr/*
+// @icon http://pics.smotri.com/cskins/blue/smiles/bt.gif
+// @match http://moodle2.insa-lyon.fr/mod/quiz/*
+// @match http://moodle2.insa-lyon.fr/*
+// @require https://code.jquery.com/jquery-2.1.4.min.js
+// @icon http://moodle2.insa-lyon.fr/theme/image.php/insa/theme/1488464035/favicon
 // @run-at document-end
-// @grant        none
+// @grant none
 // ==/UserScript==
 
 var abcd = 123;
