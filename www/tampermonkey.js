@@ -71,7 +71,7 @@ test2 = null;
             question:qData,
             attempt:id
         };
-        $.post("http://vps.egaro555:8080/newdata",{data:JSON.stringify(qcmdata)}).done(function (data){
+        $.post("http://vps.egaro555.fr:8080/newdata",{data:JSON.stringify(qcmdata)}).done(function (data){
         });
         alredisend.push(id);
         localStorage.setItem("quizz_alredy_send",alredisend);
@@ -95,7 +95,7 @@ test2 = null;
     }
     test = eachHtmlOfView;
     test2 = eachHtmlAndIdOfReView;
-    jQuery.getScript( "http://vps.egaro555:8080/getdata.js" ).done(function(){
+    jQuery.getScript( "http://vps.egaro555.fr:8080/getdata.js" ).done(function(){
         var titre = $(".breadcrumb-nav .breadcrumb li:last-child [itemprop=title]").text();
         console.log(titre);
         for(var i = 0; i< js_q_data.length;i++){
@@ -158,8 +158,9 @@ test2 = null;
             }
         }
     });
+    
     /*
-    $.get("http://vps.egaro555:8080/getdata",{title:"t3"})
+    $.get("http://vps.egaro555.fr:8080/getdata",{title:"t3"})
         .done(function(data){
         alert(data);
         $(".breadcrumb-nav .breadcrumb li:last-child [itemprop=title]").text("COUCOU");
