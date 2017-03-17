@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name         Quizz Moodle
-// @namespace    http://tampermonkey.net/
+// @name         QuizzMoodle
+// @description  private 
 // @version      1.0
 // @description  try to take over the world!
 // @author       You
