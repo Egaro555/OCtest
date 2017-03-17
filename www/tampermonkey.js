@@ -6,7 +6,6 @@
 // @include *
 // @match        http://moodle2.insa-lyon.fr/mod/quiz/*
 // @match        http://moodle2.insa-lyon.fr/*
-// @require      https://code.jquery.com/jquery-2.1.4.min.js
 // @run-at document-end
 // @grant        none
 // ==/UserScript==
