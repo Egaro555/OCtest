@@ -111,7 +111,6 @@ test2 = null;
                         var rdiv_ = $("<div></div>")
 	                        .text(js_q_data[i].question[i2].rep)
 	                        .addClass("formulation")
-	                        .addClass("clearfix")
 	                        .css("margin","0px")
 	                        .css("background-color","#ffffff")
 	                        .css("border-color","#9982e3");
