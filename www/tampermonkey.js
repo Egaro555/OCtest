@@ -115,6 +115,7 @@ test2 = null;
 	                        .css("background-color","#d5f6e3")
 	                        .css("border-color","#82e3aa");
         	    		$(q).append(rdiv_);
+        	    		alert("ok")
         	    	}
         	    })
             }
