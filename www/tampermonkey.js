@@ -121,20 +121,20 @@ test2 = null;
 	            if(js_q_data[i].title == titre){
 	                var hide = true;
 	                repdiv = $('<div></div>')
-                    .hide()
-                    .addClass("que");
+	                    .hide()
+	                    .addClass("que");
                     var qrdiv = $("<div></div>")
-                    .addClass("formulation")
-                    .addClass("clearfix");
+	                    .addClass("formulation")
+	                    .addClass("clearfix");
                     var qdiv = $("<div></div>")
-                    .text("Question : " + js_q_data[i].question[i2].text);
+                    	.text("Question : " + js_q_data[i].question[i2].text);
                     var rdiv = $("<div></div>")
-                    .text(js_q_data[i].question[i2].rep)
-                    .addClass("formulation")
-                    .addClass("clearfix")
-                    .css("margin","0px")
-                    .css("background-color","#d5f6e3")
-                    .css("border-color","#82e3aa");
+	                    .text(js_q_data[i].question[i2].rep)
+	                    .addClass("formulation")
+	                    .addClass("clearfix")
+	                    .css("margin","0px")
+	                    .css("background-color","#d5f6e3")
+	                    .css("border-color","#82e3aa");
                     qrdiv.append(qdiv);
                     qrdiv.append(rdiv);
                     repdiv.append(qrdiv);
