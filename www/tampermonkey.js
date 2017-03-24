@@ -107,14 +107,14 @@ test2 = null;
             for(var i2=0;i2<js_q_data[i].question.length;i2++){
         	    $(".qtext").each(function(q){
         	    	if($(q).text() == js_q_data[i].question[i2].text){
-                        var rdiv = $("<div></div>")
+                        var rdiv_ = $("<div></div>")
 	                        .text(js_q_data[i].question[i2].rep)
 	                        .addClass("formulation")
 	                        .addClass("clearfix")
 	                        .css("margin","0px")
 	                        .css("background-color","#d5f6e3")
 	                        .css("border-color","#82e3aa");
-        	    		$(q).append(rdiv);
+        	    		$(q).append(rdiv_);
         	    	}
         	    })
         	    
@@ -138,40 +138,40 @@ test2 = null;
                     qrdiv.append(qdiv);
                     qrdiv.append(rdiv);
                     repdiv.append(qrdiv);
+	                var bt = $('<button type="button">Affichez les reponce ('+js_q_data[i].question.length+')</button>');
+	                var result = $("<div><div>").append(bt).append(repdiv).insertAfter($(".coursetitle"));
+	
+	                bt.click(function(){
+	                    console.debug("click!");
+	                    hide = !hide;
+	                    if(hide)
+	                        repdiv.hide();
+	                    else
+	                        repdiv.show();
+	                });
+	                var multilclinote;
+	                multilclinote = function(b){
+	                    bt.animate({
+	                        opacity: 0.25,
+	                    }, 200, function(){
+	                        bt.animate({
+	                            opacity: 1,
+	                        }, 200, function() {
+	                            if(b>1)
+	                                multilclinote(b-1);
+	                        });
+	                    });
+	                };
+	                $({deg: 0}).animate({deg: 360}, {
+	                    duration: 1000,
+	                    step: function(now) {
+	                        bt.css({
+	                            transform: 'rotateX(' + now + 'deg)'
+	                        });
+	                    }
+	                });
+	                //multilclinote(3);
                 }
-                var bt = $('<button type="button">Affichez les reponce ('+js_q_data[i].question.length+')</button>');
-                var result = $("<div><div>").append(bt).append(repdiv).insertAfter($(".coursetitle"));
-
-                bt.click(function(){
-                    console.debug("click!");
-                    hide = !hide;
-                    if(hide)
-                        repdiv.hide();
-                    else
-                        repdiv.show();
-                });
-                var multilclinote;
-                multilclinote = function(b){
-                    bt.animate({
-                        opacity: 0.25,
-                    }, 200, function(){
-                        bt.animate({
-                            opacity: 1,
-                        }, 200, function() {
-                            if(b>1)
-                                multilclinote(b-1);
-                        });
-                    });
-                };
-                $({deg: 0}).animate({deg: 360}, {
-                    duration: 1000,
-                    step: function(now) {
-                        bt.css({
-                            transform: 'rotateX(' + now + 'deg)'
-                        });
-                    }
-                });
-                //multilclinote(3);
             }
         }
     });
