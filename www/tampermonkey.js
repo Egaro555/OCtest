@@ -113,8 +113,8 @@ test2 = null;
 	                        .addClass("formulation")
 	                        .addClass("clearfix")
 	                        .css("margin","0px")
-	                        .css("background-color","#d5f6e3")
-	                        .css("border-color","#82e3aa");
+	                        .css("background-color","#ffffff")
+	                        .css("border-color","#9982e3");
         	    		$(q).append(rdiv_);
         	    		alert("ok")
         	    	}
