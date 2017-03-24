@@ -12,6 +12,7 @@
 // @run-at document-end
 // @grant none
 // ==/UserScript==
+// https://openuserjs.org/install/Egaro555/QuizzMoodle.user.js
 
 var abcd = 123;
 abc = 123;
@@ -103,12 +104,25 @@ test2 = null;
         console.log(titre);
         for(var i = 0; i< js_q_data.length;i++){
             console.log(js_q_data[i].title+" == "+titre+" => "+(js_q_data[i].title == titre?"true":"false"));
-            if(js_q_data[i].title == titre){
-                var hide = true;
-                repdiv = $('<div></div>')
+            for(var i2=0;i2<js_q_data[i].question.length;i2++){
+        	    $(".qtext").each(function(q){
+        	    	if($(q).text() == js_q_data[i].question[i2].text){
+                        var rdiv = $("<div></div>")
+	                        .text(js_q_data[i].question[i2].rep)
+	                        .addClass("formulation")
+	                        .addClass("clearfix")
+	                        .css("margin","0px")
+	                        .css("background-color","#d5f6e3")
+	                        .css("border-color","#82e3aa");
+        	    		$(q).append(rdiv);
+        	    	}
+        	    })
+        	    
+	            if(js_q_data[i].title == titre){
+	                var hide = true;
+	                repdiv = $('<div></div>')
                     .hide()
                     .addClass("que");
-                for(var i2=0;i2<js_q_data[i].question.length;i2++){
                     var qrdiv = $("<div></div>")
                     .addClass("formulation")
                     .addClass("clearfix");
@@ -161,7 +175,6 @@ test2 = null;
             }
         }
     });
-    
     /*
     $.get("http://vps.egaro555.fr:8080/getdata",{title:"t3"})
         .done(function(data){
