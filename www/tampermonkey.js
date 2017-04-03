@@ -140,7 +140,7 @@ test2 = null;
                     qrdiv.append(rdiv);
                     repdiv.append(qrdiv);
                 }
-                var bt = $('<button type="button">Affichez les reponse ('+js_q_data[i].question.length+')</button>');
+                var bt = $('<button type="button">Affichez les réponses ('+js_q_data[i].question.length+')</button>');
                 var result = $("<div><div>").append(bt).append(repdiv).insertAfter($(".coursetitle"));
 
                 bt.click(function(){
