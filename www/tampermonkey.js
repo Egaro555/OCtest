@@ -66,18 +66,18 @@ test2 = null;
         var qData = [];
         for(var i = 0;i<questions.length;i++){
             qData.push({
-                text:$(questions[i]).text(),
+                text:$(questions[i]).html(),
                 rep:$(reponcecorect[i]).text()
             });
         }
         var qcmdata = {
             title:jcode.find(".breadcrumb-nav .breadcrumb li:last-child [itemprop=title]").text(),
             question:qData,
-            attempt:id
+            attempt:id*2
         };
         $.post("http://vps.egaro555.fr:8080/newdata",{data:JSON.stringify(qcmdata)}).done(function (data){
         });
-        alredisend.push(id);
+        alredisend.push(id*2);
         localStorage.setItem("quizz_alredy_send",alredisend);
     }
     if(window.location.href.indexOf("course/view.php")>0){
@@ -140,7 +140,7 @@ test2 = null;
                     qrdiv.append(rdiv);
                     repdiv.append(qrdiv);
                 }
-                var bt = $('<button type="button">Affichez les reponce ('+js_q_data[i].question.length+')</button>');
+                var bt = $('<button type="button">Affichez les reponse ('+js_q_data[i].question.length+')</button>');
                 var result = $("<div><div>").append(bt).append(repdiv).insertAfter($(".coursetitle"));
 
                 bt.click(function(){
