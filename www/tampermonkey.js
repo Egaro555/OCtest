@@ -106,8 +106,8 @@ test2 = null;
             console.log(js_q_data[i].title+" == "+titre+" => "+(js_q_data[i].title == titre?"true":"false"));
             for(var i2=0;i2<js_q_data[i].question.length;i2++){
             	$(".qtext").each(function(k,q){
-            		console.debug($(q).text() +"=="+ js_q_data[i].question[i2].text)
-        	    	if($(q).text() == js_q_data[i].question[i2].text){
+            		//console.debug($(q).text() +"=="+ js_q_data[i].question[i2].text)
+        	    	if($(q).html() == js_q_data[i].question[i2].text){
                         var rdiv_ = $("<div></div>")
 	                        .text(js_q_data[i].question[i2].rep)
 	                        .addClass("formulation")
