@@ -32,10 +32,38 @@ app.post("/newdata",function(req,res,next){
 	})
 });
 app.get("/getdata.js",function(req,res,next){
-	var data = questionData.get_data();
+	var data = questionData.get_data_md5();
 	console.log("send data");
 	res.send("js_q_data = "+JSON.stringify(data));
 	res.end();
+});
+app.post("/pushSrcBase64",function(req,res,next){
+	var base64 = req.body.base64;
+	var src = req.body.src;
+	questionData.new_img(src,base64);
+	res.end();
+});
+app.get("/pushSrc.js",function(req,res,next){
+	questionData.get_img(req.param("src"),function(res_get){
+		if(!res_get){
+			res.send("var a = "+JSON.stringify(req.param("src"))+";" +
+					"toDataURL(a,function(res){" +
+						"$.post(\"http://vps.egaro555.fr:8080/pushSrcBase64\",{src:a,base64:res});" +
+					"});");
+			
+		}
+		res.end();
+	});
+});
+app.get("/getimg",function(req,res,next){
+	questionData.get_img(req.param("src"),function(data){
+		if(data){
+			res.writeHead(200, {'Content-Type': 'image/jpeg' });
+			res.end(new Buffer(data.base64.substr(data.base64.indexOf("se64")+5), 'base64'));
+		}else{
+			res.end("false");	
+		}
+	});
 });
 app.get("/getdata",function(req,res,next){
 	var data = questionData.get_data();
