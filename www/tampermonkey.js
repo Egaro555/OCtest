@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name QuizzMoodle test_2
+// @name QuizzMoodle test_3
 // @description private
 // @version 1.0
 // @author Eg555
@@ -150,10 +150,10 @@ test2 = null;
         var l_js_q_data=js_q_data;
         localStorage.setItem("l_js_q_data",l_js_q_data);
         $(".qtext").each(function(k,q){
-            for(var i = 0; i< l_js_q_data.length;i++){
-                var i_old = i;
-                getConvertedHtml($("<div>"+$(q).html()+"</div>"),function(qhtml){
-                    console.log("qhtml",qhtml);
+            getConvertedHtml($("<div>"+$(q).html()+"</div>"),function(qhtml){
+                console.log("qhtml",qhtml);
+                for(var i = 0; i< l_js_q_data.length;i++){
+                    var i_old = i;
                     for(var i2=0;i2<l_js_q_data[i_old].question.length;i2++){
                         //console.debug($(q).text() +"=="+ js_q_data[i].question[i2].text)
                         if(qhtml == l_js_q_data[i_old].question[i2].text){
@@ -177,8 +177,8 @@ test2 = null;
                             });
                         }
                     }
-        	    });
-            }
+        	    };
+            });
         });
         for(var i = 0; i< l_js_q_data.length;i++){
             console.log(js_q_data[i].title+" == "+titre+" => "+(js_q_data[i].title == titre?"true":"false"));
